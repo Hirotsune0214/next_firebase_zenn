@@ -33,20 +33,18 @@ const Logout = () => {
     await router.push("/");
   };
 
-  const style = css`
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-flow: column;
-  `;
-
   const handleLogout = async () => {
     await signOut(auth);
     await router.push("/about");
   };
 
   return (
-    <div className={style}>
+    <div css={css`
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-flow: column;
+    `}>
       <Snackbar
         open={isLoggedIn}
         anchorOrigin={{ vertical: "top", horizontal: "center" }}
@@ -69,7 +67,7 @@ const Logout = () => {
       <h2>ログイン</h2>
       <form onSubmit={handleSubmit}>
         <div
-          className={css`
+          css={css`
             display: flex;
             justify-content: center;
             align-items: center;
