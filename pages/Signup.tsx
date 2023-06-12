@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { useRouter } from "next/router";
-
-import { app } from "./firebase";
-import { css } from "@emotion/react";
-import { Alert, Button, InputLabel, Snackbar, TextField } from "@mui/material";
 import Link from "next/link";
+import { Alert, Button, InputLabel, Snackbar, TextField } from "@mui/material";
+import { css } from "@emotion/react";
+
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { useAuthContext } from "./AuthContext";
+import { app } from "./firebase";
 
 const Signup = () => {
   const router = useRouter();
@@ -16,23 +17,19 @@ const Signup = () => {
   const [password, setPassword] = useState("");
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault;
+    e.preventDefault();
     await createUserWithEmailAndPassword(auth, email, password);
     router.push("/");
   };
-
   const handleClose = async () => {
     await router.push("/");
   };
-
   const handleChangeEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.currentTarget.value);
   };
-
   const handleChangePassword = (e: React.ChangeEvent<HTMLInputElement>) => {
     setPassword(e.currentTarget.value);
   };
-
   return (
     <div
       css={css`
