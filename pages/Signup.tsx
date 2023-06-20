@@ -12,7 +12,7 @@ const Signup = () => {
   const router = useRouter();
   const { user } = useAuthContext();
   const auth = getAuth(app);
-  const isLoggedIn = !user;
+  const isLoggedIn = !!user;
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
