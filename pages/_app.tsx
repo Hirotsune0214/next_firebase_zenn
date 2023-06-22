@@ -1,9 +1,15 @@
 import { css } from "@emotion/react";
 // import Header from "../src/components/header";
 import type { AppProps } from "next/app";
+import { AuthProvider } from "./AuthContext";
 
 const App = ({ Component, pageProps }: AppProps) => {
-  return <Component {...pageProps} />;
+  return (
+    <AuthProvider>
+      {/* <Header /> */}
+      <Component {...pageProps} />
+    </AuthProvider>
+  );
 };
 
 export default App;

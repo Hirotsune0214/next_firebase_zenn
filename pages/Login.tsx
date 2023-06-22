@@ -1,11 +1,12 @@
-// import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
+// import React, { useState } from "react";
 // import { useRouter } from "next/router";
-// import { app } from "./firebase";
-// import { useState } from "react";
-// import { css } from "@emotion/react";
-// import { Alert, Button, InputLabel, Snackbar, TextField } from "@mui/material";
 // import Link from "next/link";
+// import { Alert, Button, InputLabel, Snackbar, TextField } from "@mui/material";
+// import { css } from "@emotion/react";
+
+// import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 // import { useAuthContext } from "./AuthContext";
+// import { app } from "./firebase";
 
 // const Login = () => {
 //   const { user } = useAuthContext();
@@ -15,8 +16,8 @@
 //   const [email, setEmail] = useState("");
 //   const [password, setPassword] = useState("");
 //   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-//     e.preventDefault;
-//     await createUserWithEmailAndPassword(auth, email, password);
+//     e.preventDefault();
+//     await signInWithEmailAndPassword(auth, email, password);
 //     router.push("/");
 //   };
 //   const handleChangeEmail = (e: React.ChangeEvent<HTMLInputElement>) => {

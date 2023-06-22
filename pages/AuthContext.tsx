@@ -5,6 +5,7 @@ import {
   useContext,
   useEffect,
 } from "react";
+
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import type { User } from "firebase/auth";
 import { useRouter } from "next/router";
